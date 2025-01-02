@@ -1,42 +1,283 @@
+@import '~@flaticon/flaticon-uicons/css/all/all';
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-inter: Inter, sans-serif;
+  --color-main: #00c664;
+  --color-second: #8ca08c;
+  --color-link: #008241;
+  --color-bg: #1f261f;
+  --color-bg-alt: #eff9ef;
+  --color-grab-bg: #bbf6d9;
+  --color-grab-bg-alt: #070908;
+  --color-content-text: #000;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Reset CSS */
 html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
-a {
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section {
+  display: block;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Normalize CSS */
+/* 1. Remove the margin in all browsers. */
+body {
+  background-color: #e8f0e8;
+  margin: 0;
+  line-height: 1.2;
+  background-color: var(--color-bg-alt);
+}
+
+/* 2. Improve consistency of default fonts in all browsers. */
+body,
+button,
+input,
+select,
+textarea {
+  font-family: var(--font-inter);
+}
+
+/* 3. Correct the font size and margin on h1 elements. */
+h1,
+h2 {
+  font-size: clamp(35px, 5vw, 60px);
+  font-family: var(--font-inter);
+  font-weight: 900;
+  line-height: 0.94;
+}
+
+h3 {
+  font-size: clamp(25px, 5vw, 32px);
+  font-family: var(--font-inter);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* 4. Add the correct height in Firefox. */
+hr {
+  height: 0;
   color: inherit;
-  text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+/* 5. Add the correct text decoration in Chrome, Edge, and Safari. */
+abbr[title] {
+  text-decoration: underline dotted;
+}
+
+/* 6. Add the correct font weight in Chrome, Edge, and Safari. */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/* 7. Remove the border on images inside links in IE 10+. */
+a {
+  text-decoration: none;
+  color: var(--color-main);
+}
+
+a img {
+  border: none;
+}
+
+/* 8. Change the default cursor for buttons. */
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  cursor: pointer;
+}
+
+/* 9. Normalize the appearance of progress indicators. */
+progress {
+  vertical-align: baseline;
+}
+
+/* 10. Remove the inheritance of text transform in Firefox. */
+button,
+select {
+  text-transform: none;
+}
+
+/* 11. Correct the inability to style clickable types in iOS and Safari. */
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button;
+  appearance: button;
+}
+
+/* 12. Remove the inner border and padding in Firefox. */
+textarea {
+  overflow: auto;
+}
+
+/* 13. Add the correct display in Edge and IE. */
+details {
+  display: block;
+}
+
+/* 14. Add the correct styles for summary elements in Chrome, Edge, and Safari. */
+summary {
+  display: list-item;
+}
+
+/* Aplica a personalização ao scroll */
+::-webkit-scrollbar {
+  width: 10px; /* Largura do scroll */
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-grab-bg); /* Cor do fundo */
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-bg); /* Cor da barra de rolagem */
+  border-radius: 5px; /* Cantos arredondados */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Cor da barra de rolagem ao passar o mouse */
+}
+
+/* Firefox */
+html {
+  scrollbar-width: thin; /* Largura do scroll: "auto", "thin", ou "none" */
+  scrollbar-color: var(--color-bg) #f0f0f0; /* Cor da barra e do fundo */
+  scroll-behavior: smooth;
+}
+
+/* 15 Add Custom classes*/
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.fi {
+  display: flex;
 }

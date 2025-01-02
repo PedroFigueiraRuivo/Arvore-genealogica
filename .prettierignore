@@ -1,0 +1,30 @@
+# Ignore artifacts:
+build/
+.next/
+out/
+
+# Dependency directories
+node_modules/
+
+# Configuration files
+package-lock.json
+yarn.lock
+
+# Ignore public files that shouldn't be formatted
+public/
+
+# Specific files
+*.min.js
+*.bundle.js
+
+# Logs
+logs/
+*.log
+
+# Env files
+.env
+.env.*
+
+# Temporary files
+*.tmp
+*.temp
